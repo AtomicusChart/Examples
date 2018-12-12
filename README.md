@@ -55,5 +55,5 @@ For source code, please click the Source Code tab in demo version or data types 
 
 We are always here to assist you with any enquiry, either related to implementation of new features or maintenance of the component. Please contact us https://atomicuschart.com/contacts/ if any further information is required!
 
-Download free [demo]((https://atomicuschart.com) version to evaluate the functionality of AtomicusChart! 
+Download free [demo](https://atomicuschart.com) version to evaluate the functionality of AtomicusChart! 
 
