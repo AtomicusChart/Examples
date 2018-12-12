@@ -33,9 +33,27 @@ and others.
 #### Examples
 
 AtomicusChart contains example source code in C# to help you start using our WPF Chart libraries. 
+For source code, please click the Source Code tab in demo version or data types below.
+ 
 
 ![collage](https://atomicuschart.com/images/github/white2.jpg)
 
+*	3D Bars Chart 
+*	Raster Data Dynamic Updates
+*	Item interaction
+*	Cylindrical coordinate system
+*	Series & Series with value
+*	Stripe error bars
+*	Section composite demo
+*	Lit sphere
+*	Contours picking
+*	Iso-surface with depth
+
+
+
 #### Support
 
-We are always here to assist you with any enquiry, either related to implementation of new features or maintenance of the component. Please contact us if any further information is required!
+We are always here to assist you with any enquiry, either related to implementation of new features or maintenance of the component. Please contact us https://atomicuschart.com/contacts/ if any further information is required!
+
+Download free [demo]((https://atomicuschart.com) version to evaluate the functionality of AtomicusChart! 
+
