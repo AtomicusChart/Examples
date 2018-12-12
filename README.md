@@ -1,16 +1,16 @@
-## AtomicusChart WPF Chart Examples
+## AtomicusChart® WPF Chart Examples
 
 WPF Chart Examples are provided in C# / WPF.
 
 ## Repository Contents
 
-#### AtomicusChart Showcases
+#### AtomicusChart® Showcases
 
-The AtomicusChart Showcases illustrate WPF Chart features which show the high performance and functionality of the AtomicusChart libraries. 
+The AtomicusChart® Showcases illustrate WPF Chart features which show the high performance and functionality of the AtomicusChart® libraries. 
 
 ![collage](https://atomicuschart.com/images/github/white.jpg)
 
-The examples are written in WPF are prepared to demonstrate the capabilities of AtomicusChart.
+The examples are written in WPF are prepared to demonstrate the capabilities of AtomicusChart®.
  
 #### WPF Chart Features
 
@@ -32,7 +32,7 @@ and others.
 
 #### Examples
 
-AtomicusChart contains example source code in C# to help you start using our WPF Chart libraries. 
+AtomicusChart® contains example source code in C# to help you start using our WPF Chart libraries. 
 For source code, please click the Source Code tab in demo version or data types below.
  
 
@@ -55,7 +55,7 @@ For source code, please click the Source Code tab in demo version or data types 
 
 We are always here to assist you with any enquiry, either related to implementation of new features or maintenance of the component. Please contact us https://atomicuschart.com/contacts/ if any further information is required!
 
-Download free [demo](https://atomicuschart.com) version to evaluate the functionality of AtomicusChart! 
+Download free [demo](https://atomicuschart.com) version to evaluate the functionality of AtomicusChart®! 
 
-In order to assist students in their research activities at the university, we developed the free [Academic license](https://atomicuschart.com/license/academic/) of AtomicusChart. Specially developed for educational purposes, the license is a fully-featured version of AtomicusChart.
+In order to assist students in their research activities at the university, we developed the free [Academic license](https://atomicuschart.com/license/academic/) of AtomicusChart®. Specially developed for educational purposes, the license is a fully-featured version of AtomicusChart®.
 
