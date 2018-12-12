@@ -8,14 +8,14 @@ WPF Chart Examples are provided in C# / WPF.
 
 The AtomicusChart Showcases illustrate WPF Chart features which show the high performance and functionality of the AtomicusChart libraries. 
 
-{screenshots}
+![collage](https://atomicuschart.com/images/github/white.jpg)
 
 The examples are written in WPF are prepared to demonstrate the capabilities of AtomicusChart.
  
 #### WPF Chart Features
 
 * [High performance and optimization for Big Data sets](https://atomicuschart.com/features/bigdata/)
-*	[10M+ point clouds, 1M points curves, 16Mp structured grid 3D maps, 512*512*512 volumetric data and 150Mp+ raster data are rendered with 30+ frames per second on average discrete video adapter](https://atomicuschart.com/features/bigdata/)
+*	[10M+ point clouds, 1M points curves, 16Mp structured grid 3D maps, 512x512x512 volumetric data and 150Mp+ raster data are rendered with 30+ frames per second on average discrete video adapter](https://atomicuschart.com/features/bigdata/)
 *	[2x/4x/8x Multisampling antialiasing and 2x Supersampling antialiasing](https://atomicuschart.com/features/order-independent-transparency-msaa-ssaa/)
 *	[GPU based Order-Independent transparency](https://atomicuschart.com/features/order-independent-transparency-msaa-ssaa/)
 *	[High resolution images export for printing and reports](https://atomicuschart.com/features/high-resolution-image-export/)
@@ -34,7 +34,7 @@ and others.
 
 AtomicusChart contains example source code in C# to help you start using our WPF Chart libraries. 
 
-{screenshots}
+![collage](https://atomicuschart.com/images/github/white2.jpg)
 
 #### Support
 
