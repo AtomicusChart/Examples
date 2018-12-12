@@ -57,3 +57,5 @@ We are always here to assist you with any enquiry, either related to implementat
 
 Download free [demo](https://atomicuschart.com) version to evaluate the functionality of AtomicusChart! 
 
+In order to assist students in their research activities at the university, we developed the free [Academic license](https://atomicuschart.com/license/academic/) of AtomicusChart. Specially developed for educational purposes, the license is a fully-featured version of AtomicusChart.
+
