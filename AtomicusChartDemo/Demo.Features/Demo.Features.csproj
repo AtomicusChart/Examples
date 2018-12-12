@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F28C8163-0CAC-48FA-98A2-E1BA0FEF5F48}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AtomicusChart.Demo.Features</RootNamespace>
+    <AssemblyName>Demo.Features</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AtomicusChart.ClientHelper">
+      <HintPath>..\..\..\..\..\..\InstalledChart\AtomicusChart.ClientHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="AtomicusChart.Core">
+      <HintPath>..\..\..\..\..\..\InstalledChart\AtomicusChart.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AtomicusChart.Interface">
+      <HintPath>..\..\..\..\..\..\InstalledChart\AtomicusChart.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="AtomicusChart.ValueData">
+      <HintPath>..\..\..\..\..\..\InstalledChart\AtomicusChart.ValueData.dll</HintPath>
+    </Reference>
+    <Reference Include="AtomicusChart.Volumes">
+      <HintPath>..\..\..\..\..\..\InstalledChart\AtomicusChart.Volumes.dll</HintPath>
+    </Reference>
+    <Reference Include="AtomicusChart.WpfControl">
+      <HintPath>..\..\..\..\..\..\InstalledChart\AtomicusChart.WpfControl.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnimationHelper.cs" />
+    <Compile Include="Basic\AspectRatio3DDemo.cs" />
+    <Compile Include="Basic\Bars3DDemo.cs" />
+    <Compile Include="Basic\Benzene.cs" />
+    <Compile Include="Basic\BumpRasterDataDemo.cs" />
+    <Compile Include="Basic\CartesianCSDemo.cs" />
+    <Compile Include="Basic\CustomTargetSnappingDemo.cs" />
+    <Compile Include="Basic\CylindricalCSDemo.cs" />
+    <Compile Include="Basic\DataInteraction.cs" />
+    <Compile Include="Basic\AnimatedSeriesDemo.cs" />
+    <Compile Include="Basic\ErrorBarDemo.cs" />
+    <Compile Include="Basic\Highlighting.cs" />
+    <Compile Include="Basic\ArrowDemo.cs" />
+    <Compile Include="Basic\ColoredDemo.cs" />
+    <Compile Include="Basic\ConeDemo.cs" />
+    <Compile Include="Basic\CubeDemo.cs" />
+    <Compile Include="Basic\DiskDemo.cs" />
+    <Compile Include="Basic\InSb.cs" />
+    <Compile Include="Basic\LabelDemo.cs" />
+    <Compile Include="Basic\LineDemo.cs" />
+    <Compile Include="Basic\LineSnappingDemo.cs" />
+    <Compile Include="Basic\LinkDemo.cs" />
+    <Compile Include="Basic\LitSphereDemo.cs" />
+    <Compile Include="Basic\MarkerDemo.cs" />
+    <Compile Include="Basic\Bars3DColoredDemo.cs" />
+    <Compile Include="Basic\MultipleAnimatedSeriesDemo.cs" />
+    <Compile Include="Basic\Nanotube.cs" />
+    <Compile Include="Basic\OitDemo.cs" />
+    <Compile Include="Basic\PointsDemo.cs" />
+    <Compile Include="Basic\PointsSnappingDemo.cs" />
+    <Compile Include="Basic\PrismDemo.cs" />
+    <Compile Include="Basic\RasterDataDemo.cs" />
+    <Compile Include="Basic\SeriesDemo.cs" />
+    <Compile Include="Basic\SphereDemo.cs" />
+    <Compile Include="Basic\SphericalCSDemo.cs" />
+    <Compile Include="Basic\StripeErrorBarDemo.cs" />
+    <Compile Include="Basic\SurfaceDemo.cs" />
+    <Compile Include="Basic\TetrahedronDemo.cs" />
+    <Compile Include="Basic\TorusDemo.cs" />
+    <Compile Include="DemoDataHelper.cs" />
+    <Compile Include="DemoHelper.cs" />
+    <Compile Include="Infrastructure\FeatureAttribute.cs" />
+    <Compile Include="Infrastructure\FeatureCompiler.cs" />
+    <Compile Include="Infrastructure\FeatureDemo.cs" />
+    <Compile Include="Infrastructure\FeatureLoader.cs" />
+    <Compile Include="Infrastructure\FeatureTracker.cs" />
+    <Compile Include="Infrastructure\PrimarySettings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ValueData\AnimatedValueSeriesDemo.cs" />
+    <Compile Include="ValueData\DynamicStructuredValueSufraceDemo.cs" />
+    <Compile Include="ValueData\DynamicValuePointsDemo.cs" />
+    <Compile Include="ValueData\DynamicValueSurfaceContoursDemo.cs" />
+    <Compile Include="ValueData\IrregularValueSurface.cs" />
+    <Compile Include="ValueData\PixelatedValueRasterDemo.cs" />
+    <Compile Include="ValueData\StaticValueRasterDataDemo.cs" />
+    <Compile Include="ValueData\StructuredValueSurface.cs" />
+    <Compile Include="ValueData\ValuePointsDemo.cs" />
+    <Compile Include="ValueData\DynamicValueRasterDataDemo.cs" />
+    <Compile Include="ValueData\ValueSeriesDemo.cs" />
+    <Compile Include="ValueData\ValueSurfaceContourPickingDemo.cs" />
+    <Compile Include="ValueData\ValueSurfaceContoursDemo.cs" />
+    <Compile Include="VolumeData\ComplexGeometryDemo.cs" />
+    <Compile Include="VolumeData\RectVolumeSectionDemo.cs" />
+    <Compile Include="VolumeData\VolumeHelper.cs" />
+    <Compile Include="VolumeData\VolumeIPRayCastingDemoMax.cs" />
+    <Compile Include="VolumeData\VolumeIPRayCastingDemoAverage.cs" />
+    <Compile Include="VolumeData\VolumeIPRayCastingDemoMin.cs" />
+    <Compile Include="VolumeData\VolumeIsoRayCastingAnimatedDemo.cs" />
+    <Compile Include="VolumeData\VolumeIsoRayCastingDemo.cs" />
+    <Compile Include="VolumeData\VolumeIsoRayCastingDepthDemo.cs" />
+    <Compile Include="VolumeData\VolumeIsoRayCastingOitDemo.cs" />
+    <Compile Include="VolumeData\VolumeIsoRayCastingTransparentDemo.cs" />
+    <Compile Include="VolumeData\VolumeRayCastingDemo.cs" />
+    <Compile Include="VolumeData\VolumeRayCastingDepthDemo.cs" />
+    <Compile Include="VolumeData\VolumeRayCastingHighlightingDemo.cs" />
+    <Compile Include="VolumeData\VolumeSectionCompositeDemo.cs" />
+    <Compile Include="VolumeData\VolumeSectionDemo.cs" />
+    <Compile Include="VolumeData\VolumeShadedRayCastingDemo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\bump01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skull.raw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Atomicus.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stone01.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\OldBronze.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
