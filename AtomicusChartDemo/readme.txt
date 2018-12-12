@@ -1,0 +1,1 @@
+AtomicusChart trial or higher should be installed to build the demo.
