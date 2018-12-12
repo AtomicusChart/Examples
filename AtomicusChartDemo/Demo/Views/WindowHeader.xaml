@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="AtomicusChart.Demo.Views.WindowHeader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AtomicusChart.Demo"
+             xmlns:views="clr-namespace:AtomicusChart.Demo.Views"
+             mc:Ignorable="d" x:ClassModifier="internal"
+             d:DesignWidth="500">
+
+    <UserControl.Resources>
+        <ControlTemplate TargetType="{x:Type views:ImageButton}" x:Key="ImageButtonTemplate">
+            <Image Source="{TemplateBinding Icon}" Stretch="None" x:Name="Image1"/>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True" SourceName="Image1">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <Style TargetType="{x:Type views:ImageButton}">
+            <Setter Property="Template" Value="{StaticResource ImageButtonTemplate}"/>
+            <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid  Background="{StaticResource NavigationPanelBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Canvas  Background="{StaticResource WindowHeaderBackground}"/>
+        <views:ImageButton Grid.Column="2" Icon="../Images/MinimizeIcon.png" Command="{StaticResource MinimizeCommand}"/>
+        <views:ImageButton Grid.Column="4" Icon="../Images/MaximizeIcon.png"  Command="{StaticResource MaximizeCommand}"/>
+        <views:ImageButton Grid.Column="6" Icon="../Images/CloseIcon.png"  Command="{StaticResource CloseCommand}"/>
+    </Grid>
+</UserControl>

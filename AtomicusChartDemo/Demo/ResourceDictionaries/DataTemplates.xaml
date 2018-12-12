@@ -1,0 +1,276 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:demo="clr-namespace:AtomicusChart.Demo"
+                    xmlns:controls="clr-namespace:AtomicusChart.Demo.Controls"
+                    xmlns:infrastructure="clr-namespace:AtomicusChart.Demo.Features.Infrastructure;assembly=Demo.Features">
+	
+
+    <RoutedCommand x:Key="CloseCommand"/>
+    <RoutedCommand x:Key="MinimizeCommand"/>
+    <RoutedCommand x:Key="MaximizeCommand"/>
+    <RoutedCommand x:Key="RunCommand"/>
+    <RoutedCommand x:Key="DimensionalModCommand"/>
+	<RoutedCommand x:Key="SourceCodeVision"/>
+
+    <SolidColorBrush Color="#FF00ADEE" x:Key="GroupsBackgroundBrush"/>
+    <SolidColorBrush Color="White" x:Key="SelectedItemBackgroundBrush"/>
+    <SolidColorBrush Color="#FF0071ba" x:Key="NavigationPanelBackground"/>
+    <SolidColorBrush Color="#FF233d6a" x:Key="FeaturesPanelBackgroudBrush"/>
+    <SolidColorBrush Color="#ffe8f6ff" x:Key="ChartBackground"/>
+    <SolidColorBrush Color="#FF0b5a98" x:Key="WindowHeaderBackground"/>
+
+	<DropShadowEffect x:Key="SelectFeatureEffect" ShadowDepth="0" Color="White" Opacity="1" BlurRadius="5"/>
+
+    <Style TargetType="{x:Type Button}" x:Key="CloseButtonStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}" x:Name="CloseDescriptionButton">
+                    <Grid Opacity="0.5"  Name="CloseButtonGrid" Background="Transparent">
+                        <Canvas Name="CloseButtonCanvas" >
+                            <Line X1="0" X2="{TemplateBinding Width}" Y1="{TemplateBinding Height}" Y2="0" Stroke="White" StrokeThickness="2" Opacity="{TemplateBinding Opacity}"/>
+                            <Line X1="0" X2="{TemplateBinding Width}" Y1="0" Y2="{TemplateBinding Height}" Stroke="White" StrokeThickness="2" Opacity="{TemplateBinding Opacity}"/>
+                        </Canvas>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="CloseButtonGrid" Property="Opacity" Value="1"/>
+                            <Setter TargetName="CloseButtonGrid" Property="Effect" Value="{StaticResource SelectFeatureEffect}"/>
+                            <Setter TargetName="CloseButtonGrid" Property="Cursor" Value="Hand"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+
+    <DataTemplate DataType="{x:Type demo:Category}">
+
+        <Grid  Width="430" Margin="10" Background="#ff192f58" HorizontalAlignment="Left" x:Name="MainGrid">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid x:Name="HeaderGrid" Background="{Binding ElementName=MainGrid, Path=Background}">
+				<ContentControl 
+						Content="{Binding Header}" 
+						Foreground="White" 
+						Margin="10,0" 
+						x:Name="HeaderPresenter"/>
+			</Grid>
+
+			<ItemsControl Margin="20,0" Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Features}"/>
+        </Grid>
+
+        <DataTemplate.Triggers>
+            <Trigger SourceName="HeaderGrid" Property="IsMouseOver" Value="True" >
+                <Setter TargetName="HeaderPresenter" Property="Effect" Value="{StaticResource SelectFeatureEffect}"/>
+                <Setter TargetName="MainGrid" Property="Background" Value="#ff112449" />
+            </Trigger>
+
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <DataTemplate DataType="{x:Type infrastructure:FeatureInfo}">
+		<Grid x:Name="MainGrid">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDown">
+                    <i:InvokeCommandAction Command="{StaticResource RunCommand}" CommandParameter="{Binding}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+			<Polygon x:Name="Polygon111" Points="0,0 0,10 6,5"  Fill="#FF0071ba" Stroke="#FF0071ba" VerticalAlignment="Center" SnapsToDevicePixels="True" Stretch="Fill"/>
+			<TextBlock Grid.Column="1" Text="{Binding FeatureName}" Foreground="White" FontSize="14" FontWeight="Light" Margin="5" />
+        </Grid>
+
+        <DataTemplate.Triggers>
+            <Trigger SourceName="MainGrid" Property="IsMouseOver" Value="True" >
+                <Setter TargetName="MainGrid" Property="Effect" Value="{StaticResource SelectFeatureEffect}"/>
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+
+    <DataTemplate DataType="{x:Type demo:Header}">
+        <Grid Background="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentControl}}, Path=Background}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Image Source="{Binding Icon}" Height="40" Width="40" Margin="10" Stretch="Fill"/>
+            <TextBlock Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       Foreground="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ContentControl}}, Path=Foreground}"
+                       FontSize="18" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Center"
+                       TextWrapping="WrapWithOverflow"/>
+        </Grid>
+    </DataTemplate>
+
+
+
+	<Style x:Key="BackButton" TargetType="Button">
+		<Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+		<Setter Property="VerticalContentAlignment" Value="Stretch"></Setter>
+		<Setter Property="Background" Value="#ff0071b8"></Setter>
+		<Style.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#FF0b5a98"></Setter>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+
+	<ControlTemplate TargetType="{x:Type Button}" x:Key="BackButtonTemplate">
+		<Grid Background="{TemplateBinding Background}" >
+
+		    <Grid.ColumnDefinitions>
+			    <ColumnDefinition Width="Auto"/>
+			    <ColumnDefinition/>
+		    </Grid.ColumnDefinitions>
+
+		    <Polyline Points="10,0 0,10 10,20" Stroke="White" StrokeThickness="2" VerticalAlignment="Center"  Margin="20,0,0,0" Stretch="Fill"/>
+
+		    <TextBlock  
+			    Grid.Column="1" 
+			    Text="{Binding SelectedCategory.Header.Name}" 
+			    TextWrapping="WrapWithOverflow"
+			    Padding="20,15" 
+			    VerticalAlignment="Center"
+			    SnapsToDevicePixels="True"
+			    FontSize="16"
+			    Foreground="White" />
+	    </Grid>
+		<ControlTemplate.Triggers>
+			<Trigger Property="IsMouseOver" Value="True">
+				<Setter Property="Background" Value="#ff0071b8"></Setter>
+			</Trigger>
+		</ControlTemplate.Triggers>
+	</ControlTemplate>
+
+	
+
+    <Style TargetType="{x:Type ListBoxItem}" x:Key="GroupListBoxItem">
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                    <StackPanel Orientation="Horizontal" 
+                                Margin="0,0,-10,0">
+						<TextBlock>
+							<ContentControl Content="{Binding Header}"  
+											Width="200" 
+											Height="80"
+											Background="{TemplateBinding Background}"  
+											Foreground="{TemplateBinding Foreground}" />
+						</TextBlock>
+                        <Polygon  Points="0,0 10,10, 0,20" 
+                                  x:Name="PolygonSelector"
+                                  VerticalAlignment="Center" 
+                                  SnapsToDevicePixels="True" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#ff26b9f1" />
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SelectedItemBackgroundBrush}" />
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter TargetName="PolygonSelector" Property="Fill" Value="{StaticResource SelectedItemBackgroundBrush}"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+	
+
+    <Style TargetType="{x:Type ListBox}" x:Key="GroupsListBoxStyle">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource GroupListBoxItem}"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ItemsPanelTemplate x:Key="CategoriesPanelTemplate">
+        <controls:PlotPanel/>
+    </ItemsPanelTemplate>
+
+	<Style x:Key="ImageStyle" 
+	       TargetType="Image">
+		<Setter Property="Stretch" Value="Uniform" />
+		<Setter Property="MaxWidth" Value="190"></Setter>
+	</Style>
+
+	<ControlTemplate TargetType="{x:Type ListBoxItem}" x:Key="FeatureListBoxItemTemplate">
+		<Border BorderThickness="0">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition></RowDefinition>
+					<RowDefinition></RowDefinition>
+				</Grid.RowDefinitions>
+				<TextBlock Grid.Row="1"
+						   Width="{TemplateBinding Width}"
+				           MaxWidth="200"
+						   Text="{Binding FeatureName}"
+						   TextWrapping="WrapWithOverflow"
+						   Padding="20,10" 
+						   VerticalAlignment="Center"
+						   SnapsToDevicePixels="True"
+						   FontSize="16"
+						   Background="{TemplateBinding Background}"  
+						   Foreground="{TemplateBinding Foreground}" />
+			</Grid>
+
+		</Border>
+	</ControlTemplate>
+
+
+    <Style TargetType="{x:Type ListBox}" x:Key="SelectFeatureListBoxStyle">
+
+        <Setter Property="Background" Value="{StaticResource GroupsBackgroundBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ListBox}">
+                    <Grid Background="{TemplateBinding Background}">
+                        <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type ListBoxItem}" >
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                    <Setter Property="Foreground" Value="{StaticResource SelectedItemBackgroundBrush}"/>
+                    <Setter Property="Background" Value="{StaticResource GroupsBackgroundBrush}"/>
+                    <Setter Property="Template" Value="{StaticResource FeatureListBoxItemTemplate}"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter  Property="Background" Value="#ff26b9f1"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="{StaticResource SelectedItemBackgroundBrush}" />
+                            <Setter  Property="Foreground" Value="Black"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Style TargetType="{x:Type Button}" x:Key="CustomButons">
+		<Setter Property="Margin" Value="5"/>
+		<Setter Property="Padding" Value="10,5"/>
+		<Setter Property="Background" Value="#ff0a5a97"/>
+		<Setter Property="Foreground" Value="White"/>
+	</Style>
+
+</ResourceDictionary>
